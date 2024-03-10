@@ -1,0 +1,92 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--	<meta name="viewport" 
+      content="user-scalable=no,width=device-width" />-->
+	<title>RPS Play!</title>
+	<script src="static/bootstrap.js">
+	</script>
+	<script src="static/custom.js">
+	</script>
+	<link href="static/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="static/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<audio id="page_audio" src="static/{{sound_file}}"></audio>
+<form action="/" method="GET">
+	<div class="container-fluid bground-header">
+		<div class="row">
+			<div class="col-sm-3 text-center title">
+				<h2>Rock, Paper, Scissors</h2>
+			</div>
+			<div class="col-sm-4 text-center">
+				<span class="status">Round {{scores[0]+scores[1]+scores[2]+1}} <br>
+				</span>
+				<span class="user">Player {{scores[0]}}</span> | <span class="ai">Computer {{scores[1]}}</span>
+			</div>
+			<div class="col-sm-5 text-center">
+				<input class="btn btn-danger btn-block" type="submit" name="selected"
+					   value="Reset Game" style='visibility:{{reset_visible}}'/>
+			</div>
+		</div>
+	</div>
+</form>
+<form action="/" method="post">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-2 text-center d-none d-sm-block user">Player</div>
+			<div class="col-sm-2 text-center d-none d-sm-block ai">Computer</div>
+			<div class="col-sm-6"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">
+				<div class="row">
+					<div class="text-center">
+						<input id="Rock" class="btn btn-light outline-user" type="submit"
+							   name="selected" value="Rock" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="text-center">
+						<input id="Paper" class="btn btn-light outline-user" type="submit"
+							   name="selected" value="Paper" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="text-center">
+						<input id="Scissors" class="btn btn-light outline-user" type="submit"
+							   name="selected" value="Scissors" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="text-center">
+					<img class="user_img" src="static/{{user_select}}">
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="text-center">
+					<img class="ai_img" src="static/{{ai_select}}">
+				</div>
+			</div>
+			<div class="col-sm-3 text-center bground-header" style="background-color:{{win_color}};">
+					{% autoescape false %}
+					{{winner}}
+					{% endautoescape %}
+			</div>
+			<div class="col-sm-3 text-center">
+			</div>
+		</div>
+	</div>
+</form>
+<footer class="copyright">
+	<h9>
+		© P. Tim Miller <script>document.write(new Date().getFullYear())</script> - Academic Use Only
+	</h9>
+</footer>
+</body>
+
+

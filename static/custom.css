@@ -1,0 +1,76 @@
+body {
+    background-image: url('game.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom:5%;
+}
+.bground-header {
+   background-color: #EAEAEA;
+   border:10px double black;
+}
+.user_img {
+    transform: scaleX(-1);
+    border:10px double #7CB9E8;
+    width:70%;
+    min-width: 50%;
+}
+.ai_img {
+    border:10px double lightgreen;
+    width:70%;
+    min-width: 50%;
+}
+.btn.outline-user {
+	background: #7CB9E8;
+	padding: 12px 22px;
+	width:100%;
+	height:80%;
+}
+.btn-light.outline-user {
+	border: 2px solid #000000;
+	color: #000000;
+}
+
+.user {
+    text-shadow: 0 0 1px #7CB9E8, 0 0 2px #007FFF;
+}
+.ai {
+    text-shadow: 0 0 1px lightgreen, 0 0 2px green;
+}
+.status {
+    text-shadow: 0 0 1px gray, 0 0 2px black;
+}
+
+.title {
+    color: gray;
+    text-shadow: -1px 1px 0 #000,
+                  1px 1px 0 #000,
+                 1px -1px 0 #000,
+                -1px -1px 0 #000;
+}
+
+.copyright {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: black;
+    text-align: center;
+}
+
+@media only screen and (max-device-width : 1024px) { 
+    .user_img {
+      width:35%;
+      max-width:35%;
+      min-width:30%;
+    }
+    .ai_img {
+      width:35%;
+      max-width:35%;
+      min-width: 30%;
+    }
+    .pc_only {
+      display:none;
+    }
+}
